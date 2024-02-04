@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 500px;
+    width: 350px;
+    perspective: 800px;
+}
+
+/* applies first to container which then applies to card */
+.container:hover > .card{             
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.card{
+    height: 100%;
+    width: 100%;
+    position: relative; 
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+
+
+.front,.back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front{
+    background-color: blueviolet;
+}
+
+.back{
+    background-color: chartreuse;
+    transform: rotateY(180deg);
+}
